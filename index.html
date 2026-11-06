@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b090a">
+  <meta name="description" content="J 🌹 · jotatito. A mi manera. Alquimista, Kristos y El Matador.">
+  <meta property="og:title" content="J 🌹 · jotatito">
+  <meta property="og:description" content="a mi manera.">
+  <meta property="og:image" content="https://jotatito05.github.io/jotatito-web/assets/topuria-poster.jpg">
+  <title>J 🌹 · jotatito</title>
+  <link rel="icon" href="assets/rose.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 4 5 6m0-6-5 6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-6 7-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 2 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" transform="translate(1 0)"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  </defs></svg>
+
+  <div class="backdrop" aria-hidden="true">
+    <img class="poster" src="assets/topuria-poster.jpg" alt="" fetchpriority="high">
+    <div class="film"><div id="background-player"></div></div>
+    <div class="shade"></div><div class="grain"></div>
+  </div>
+
+  <button class="entry" id="enter" aria-label="Entrar al perfil de J y reproducir Alquimista">
+    <span class="entry-top">JOTATITO</span>
+    <span class="entry-center"><img class="entry-rose" src="assets/rose.svg" alt=""><span class="entry-title">pulsa para entrar<span class="entry-period">.</span></span><span class="entry-sub">un poco de mí, a mi manera.</span><span class="entry-line"></span><span class="entry-hint">ACTIVA EL SONIDO <svg><use href="#i-arrow"/></svg></span></span>
+    <span class="entry-bottom">ALQUIMISTA · KRISTOS</span>
+  </button>
+
+  <div class="experience" id="experience" inert>
+    <header class="toolbar">
+      <div class="sound-controls">
+        <button class="icon-button" id="mute" aria-label="Silenciar música" title="Silenciar música"><svg><use href="#i-volume"/></svg></button>
+        <input id="volume" type="range" min="0" max="100" value="60" aria-label="Volumen de la música">
+      </div>
+      <button class="background-control" id="background-toggle" aria-pressed="false"><svg><use href="#i-pause"/></svg><span>Pausar fondo</span></button>
+    </header>
+
+    <main>
+      <div class="card-shell">
+      <article class="profile" aria-label="Perfil de J, jotatito">
+        <div class="card-top"><span class="card-label">MI PEQUEÑO RINCÓN</span><button class="icon-button copy-button" id="copy" aria-label="Copiar enlace del perfil" title="Copiar enlace"><svg><use href="#i-link"/></svg></button></div>
+        <div class="avatar" aria-hidden="true"><img src="assets/rose.svg" alt=""></div>
+        <h1>J <img class="name-rose" src="assets/rose.svg" alt="rosa"></h1>
+        <p class="handle">@jotatito</p>
+        <p class="bio">a mi manera<span class="red">.</span></p>
+        <div class="divider" aria-hidden="true"></div>
+        <section class="music" aria-label="Reproductor de Alquimista">
+          <div class="music-heading"><button class="music-play" id="music-toggle" aria-label="Reproducir música"><svg><use href="#i-play"/></svg></button><div><h2>Alquimista</h2><p>Kristos</p></div><span class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+          <div class="music-timeline"><input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Posición de la canción" aria-valuetext="0:00" disabled></div>
+          <div class="music-times"><span id="elapsed">0:00</span><span class="music-status" id="music-status" role="status">CARGANDO…</span><span id="duration">—:——</span></div>
+        </section>
+        <div class="card-bottom"><span class="bottom-line"></span><span>JOTATITO</span><span class="bottom-line"></span></div>
+      </article>
+      </div>
+    </main>
+
+  </div>
+  <div class="audio-engine" aria-hidden="true"><div id="music-player"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
